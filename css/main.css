@@ -1,0 +1,48 @@
+body{ 
+    justify-content: center; 
+    align-items: center;
+}
+h1{ 
+    text-align: center; 
+}
+div{ 
+    display: grid; 
+    grid-template-columns: auto auto auto;  
+    background-color: lightblue; 
+    padding: 10px; 
+    justify-content: center; 
+}
+.ring1{ 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+.ring2{ 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+.ring3{ 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+#spin{ 
+    padding: 10px; 
+    background-color: red; 
+    border-radius: 50%; 
+    color: white; 
+    float: right;
+    height: 50px;
+
+}
+
+#cashOut{ 
+    padding: 10px; 
+    background-color: red; 
+    border-radius: 50%; 
+    color: white; 
+}
