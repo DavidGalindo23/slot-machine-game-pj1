@@ -3,14 +3,19 @@ let setImg1 = document.querySelector('.ring1');
 let setImg2 = document.querySelector('.ring2'); 
 let setImg3 = document.querySelector('.ring3'); 
 
+
 /*----- event listeners -----*/
 
-document.getElementById('spin').addEventListener('click',setSlot);
+document.getElementById('spin').addEventListener('click',function(){
+
+    document.getElementsByClassName('ring1')[0].style.transform = "rotateX('720deg');"
+    setSlot()
+});
 document.getElementById('quit').addEventListener('click', endGame);
 
 /*----- app's state (variables) -----*/
 
-let intialArray = [7, 7, 7, 10, 7, 8, 10, 9, 10, 9, 7, 8]; 
+let intialArray = [7, 7, 7, 1, 7, 8, 1, 9, 1, 9, 7, 8]; 
 let slotArray = [];
 
 
@@ -20,7 +25,7 @@ startGame();
 //function startGame() 
 /* Game will sart when start button is click*/ 
 function startGame(){ 
-
+    
 setImg1.innerText = intialArray[0];
 setImg2.innerText = intialArray[0];
 setImg3.innerText = intialArray[0];
@@ -50,17 +55,31 @@ function checkForWin(){
     }
 }
 function setSlot(){ 
-   // document.getElementById('msg').innerText = ""; 
     //pushes 3 elements to slotArray
-    for(var i = 0; i < 3; i++){ 
-       slotArray.push( intialArray[Math.floor(Math.random() * intialArray.length)]);    
-       console.log(slotArray);    
-    }
-    setImg1.innerText = slotArray[0];
-    setImg2.innerText = slotArray[1];
-    setImg3.innerText = slotArray[2];
 
-    checkForWin();
+
+    setImg1.innerText = ''
+    setImg2.innerText = ''
+    setImg3.innerText = ''
+
+    /// delays slot for 3 seconds
+    var spinning = setTimeout(function(){
+    for(var i = 0; i < 3; i++){ 
+       slotArray.push( intialArray[Math.floor(Math.random() * intialArray.length)]);  
+
+    //    console.log(slotArray);    
+    }
+
+        setImg1.style.backgroundImage = "";
+        setImg2.style.backgroundImage = "";
+        setImg3.style.backgroundImage = "";
+        console.log("workiiinnngggg")
+        setImg1.innerText = slotArray[0];
+        setImg2.innerText = slotArray[1];
+        setImg3.innerText = slotArray[2];
+        checkForWin();
+    }, 3000)
+
 
 }
 //function endGame()
@@ -75,4 +94,13 @@ function timer(){
     setTimeout(function(){ 
         document.getElementById('msg').innerText = "";
     }, 1000);
+}
+function animate(){ 
+    $(document).ready(function(){
+        $("spin").on({
+            click: function(){ 
+                $(this).addEventListener('click', setSlot);
+            }
+        })
+    }); 
 }
