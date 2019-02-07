@@ -53,6 +53,7 @@ div{
     /* -webkit-animation: spin 3s; 
     animation: spin 3s; */
 }
+
 .ring1{ 
     position: relative;
     top: 100px;
@@ -63,8 +64,13 @@ div{
     color: white; 
     animation-name: ring1;
     animation-duration: 2s;
-    transform: rotateX(720deg);
+    transform: rotateX(3600deg);
+    height: 80px;
+    background-size: 222px 283px;
+    background-repeat: no-repeat;
+    width: 50px;
 }
+
 .ring2{ 
     position: relative;
     top: 100px;
@@ -73,9 +79,13 @@ div{
     font-size: 30px;
     text-align: center;
     color: white; 
-    animation-name: ring2;
+    animation-name: ring1;
     animation-duration: 2.5s;
-    transform: rotateX(720deg);
+    transform: rotateX(3600deg);
+    height: 80px;
+    background-size: 222px 283px;
+    background-repeat: no-repeat;
+    width: 50px;
 }
 .ring3{ 
     position: relative;
@@ -85,9 +95,13 @@ div{
     font-size: 30px;
     text-align: center;
     color: white; 
-    animation-name: ring3;
+    animation-name: ring1;
     animation-duration: 3s;
-    transform: rotateX(720deg);
+    transform: rotateX(3600deg);
+    height: 80px;
+    background-size: 222px 283px;
+    background-repeat: no-repeat;
+    width: 50px;
 }
 #spin{ 
     position: relative;

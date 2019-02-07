@@ -7,15 +7,28 @@ let setImg3 = document.querySelector('.ring3');
 /*----- event listeners -----*/
 
 document.getElementById('spin').addEventListener('click',function(){
-
-    document.getElementsByClassName('ring1')[0].style.transform = "rotateX('720deg');"
+  setImg1.style.animationName = 'none';
+  setImg2.style.animationName = 'none';
+  setImg3.style.animationName = 'none';
+  setImg1.textContent = '';
+  setImg2.textContent = '';
+  setImg3.textContent = '';
+  setTimeout(function() {
+    // note that you only need a single animation
     setSlot()
+    // setTimeout(function() {
+      setImg1.style.animationName = 'ring1';
+      setImg2.style.animationName = 'ring1';
+      setImg3.style.animationName = 'ring1';
+      // 
+    // }, 3200);
+  }, 100);
 });
 document.getElementById('quit').addEventListener('click', endGame);
 
 /*----- app's state (variables) -----*/
 
-let intialArray = [7, 7, 7, 1, 7, 8, 1, 9, 1, 9, 7, 8]; 
+let intialArray = [7, 7, 7, 1, 7, 8, 1, 9, 1, 9, 7, 8, 5, 5, 5]; 
 let slotArray = [];
 
 
@@ -26,16 +39,14 @@ startGame();
 /* Game will sart when start button is click*/ 
 function startGame(){ 
     
-setImg1.innerText = intialArray[0];
-setImg2.innerText = intialArray[0];
-setImg3.innerText = intialArray[0];
+setImg1.style.backgroundImage = "url('images/Lucky_Seven.png')";
+setImg2.style.backgroundImage = "url('images/Lucky_Seven.png')";
+setImg3.style.backgroundImage = "url('images/Lucky_Seven.png')";
 }
 
 //function spinSlot() 
 //will spin each slot one at a time
-function spinSlot(){ 
-    
-}
+
 
 //function checkForWin()
 //will check for possible on single 
@@ -55,33 +66,54 @@ function checkForWin(){
     }
 }
 function setSlot(){ 
-    //pushes 3 elements to slotArray
+  //pushes 3 elements to slotArray
+  setImg1.innerText = ''
+  setImg2.innerText = ''
+  setImg3.innerText = ''
 
-
-    setImg1.innerText = ''
-    setImg2.innerText = ''
-    setImg3.innerText = ''
-
-    /// delays slot for 3 seconds
-    var spinning = setTimeout(function(){
-    for(var i = 0; i < 3; i++){ 
-       slotArray.push( intialArray[Math.floor(Math.random() * intialArray.length)]);  
-
-    //    console.log(slotArray);    
-    }
-
-        setImg1.style.backgroundImage = "";
-        setImg2.style.backgroundImage = "";
-        setImg3.style.backgroundImage = "";
-        console.log("workiiinnngggg")
-        setImg1.innerText = slotArray[0];
-        setImg2.innerText = slotArray[1];
-        setImg3.innerText = slotArray[2];
-        checkForWin();
-    }, 3000)
-
-
+  for(var i = 0; i < 3; i++){ 
+      slotArray.push( intialArray[Math.floor(Math.random() * intialArray.length)]);  
+  }
+  if(slotArray[0] === 1){ 
+      setImg1.style.backgroundImage = "url('images/A.png')";
+  } else if(slotArray[0] === 5){ 
+    setImg1.style.backgroundImage = "url('images/cherry.png')";
+  } else if(slotArray[0] === 7){ 
+    setImg1.style.backgroundImage = "url('images/Lucky_Seven.png')";
+  } else if(slotArray[0] === 8){ 
+    setImg1.style.backgroundImage = "url('images/Q.png')";
+  }else{ 
+    setImg1.style.backgroundImage = "url('images/King.png')";
+  }
+  
+  if(slotArray[1] === 1){ 
+    setImg2.style.backgroundImage = "url('images/A.png')";
+} else if(slotArray[1] === 5){ 
+  setImg2.style.backgroundImage = "url('images/cherry.png')";
+} else if(slotArray[1] === 7){ 
+  setImg2.style.backgroundImage = "url('images/Lucky_Seven.png')";
+} else if(slotArray[1] === 8){ 
+  setImg2.style.backgroundImage = "url('images/Q.png')";
+}else{ 
+  setImg2.style.backgroundImage = "url('images/King.png')";
 }
+
+if(slotArray[2] === 1){ 
+    setImg3.style.backgroundImage = "url('images/A.png')";
+} else if(slotArray[2] === 5){ 
+  setImg3.style.backgroundImage = "url('images/cherry.png')";
+} else if(slotArray[2] === 7){ 
+  setImg3.style.backgroundImage = "url('images/Lucky_Seven.png')";
+} else if(slotArray[2] === 8){ 
+  setImg3.style.backgroundImage = "url('images/Q.png')";
+}else{ 
+  setImg3.style.backgroundImage = "url('images/King.png')";
+}
+  setTimeout(function(){
+    checkForWin();
+  }, 3200)
+}
+
 //function endGame()
 //will end Game when QUIT button is click 
 function endGame(){ 
@@ -104,3 +136,4 @@ function animate(){
         })
     }); 
 }
+
