@@ -20,6 +20,7 @@ document.getElementById('spin').addEventListener('click',function(){
       setImg1.style.animationName = 'ring1';
       setImg2.style.animationName = 'ring1';
       setImg3.style.animationName = 'ring1';
+      
       // 
     // }, 3200);
   }, 100);
@@ -127,13 +128,3 @@ function timer(){
         document.getElementById('msg').innerText = "";
     }, 1000);
 }
-function animate(){ 
-    $(document).ready(function(){
-        $("spin").on({
-            click: function(){ 
-                $(this).addEventListener('click', setSlot);
-            }
-        })
-    }); 
-}
-

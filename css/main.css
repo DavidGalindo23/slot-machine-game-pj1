@@ -15,7 +15,6 @@ body{
     align-items: center;
     margin: 0; 
     background-size: contain; 
-    /* border: 5px solid white;  */
 }
 
 .middle{ 
@@ -34,7 +33,6 @@ body{
     margin: 0px; 
     border: 0px;
     background-size: contain;
-    /* border: 5px solid white; */
 }
 
 h1{ 
@@ -50,8 +48,6 @@ div{
     grid-template-columns: auto auto auto;   
     position: center;
     justify-content: center; 
-    /* -webkit-animation: spin 3s; 
-    animation: spin 3s; */
 }
 
 .ring1{ 
