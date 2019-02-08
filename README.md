@@ -24,4 +24,6 @@ To determine if someone won, I check to see if each image is the same. To do tha
 
 ![Alt text](/images/logic-pic.png) 
 
+## Shared Link 
 
+[Link to page](https://davidgalindo23.github.io/slot-machine-game-pj1/)
