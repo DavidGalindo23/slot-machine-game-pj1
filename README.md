@@ -2,7 +2,7 @@
 
 
 
-![Alt text](/Users/davidgalindo/slot-machine-game-pj1/images/slot-game.png)
+![Alt text](/images/slot-game.png)
 
 
 
@@ -22,6 +22,6 @@ How the game works is easy. Push the spin button to begin the game. Continue pus
 To determine if someone won, I check to see if each image is the same. To do that I associate a number from my initialArray to an image. 
 
 
-![Alt text](//Users/davidgalindo/slot-machine-game-pj1/images/logic-pic.png) 
+![Alt text](/images/logic-pic.png) 
 
 
