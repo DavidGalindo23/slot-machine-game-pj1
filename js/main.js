@@ -41,8 +41,8 @@ startGame();
 function startGame(){ 
     
 setImg1.style.backgroundImage = "url('images/Lucky_Seven.png')";
-setImg2.style.backgroundImage = "url('images/Lucky_Seven.png')";
-setImg3.style.backgroundImage = "url('images/Lucky_Seven.png')";
+setImg2.style.backgroundImage = "url('images/Q.png')";
+setImg3.style.backgroundImage = "url('images/King.png')";
 }
 
 //function spinSlot() 
